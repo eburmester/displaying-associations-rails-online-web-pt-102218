@@ -30,6 +30,8 @@ class PostsController < ApplicationController
 	
 	private 
 	
-	def post_params
+	def post_params(*args)
+    params.require(:category).permit(*args)
+  end 
 	  
 end
